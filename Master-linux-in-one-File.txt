@@ -1,0 +1,489 @@
+LINUX COMMANDS CHEAT SHEET BY @zanthoshh
+
+//Here the zanthoshh@whitehat:  -> is my computer name 
+//The commands after $ -> This doller sign is the inux command 
+//Dont confuse it 
+//Then after commands the next line printed is the operation of the command 
+
+//This ( $pwd )command prints the current working directory of the system 
+//Basically this tells where you are in the system (path)
+
+{
+
+zanthoshh@whitehat:~$ pwd  
+/home/zanthoshh
+
+}
+
+//This ( $uname -a )command prints the operating  system kernal information which is running 
+//kernal version & Machine Architecture & Host details & Computer Name & Kernal build Details 
+
+{
+
+zanthoshh@whitehat:~$ uname -a
+Linux whitehat 7.0.0-28-generic #28~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jul  1 15:50:57 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+
+}
+
+//This ($whoami) command tell the username 
+
+{
+
+zanthoshh@whitehat:~$ whoami
+zanthoshh
+
+}
+
+//TO CLEAR THE SCREEN IN TERMINAL ($clear)
+shortcut (ctrl+l Key) 
+
+//To view the previous command ($history)
+
+//How to use VI text editor in the linux 
+//basically VI is the one of the textexitor in the linux there are two default texteditors in linux they are ,
+-----> nano
+----->vi 
+//Lets  Know about vi
+//To create a file or open a any file 
+//vi nameofthefile
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ vi hello.txt
+
+}
+
+//After opening that file to write or modify the data you have to prees the key (i) --> This is known as the insert mode 
+
+//After modifying to get out  from the insert mode and to save 
+//To get out from any mode press esc key
+(ESC - KEY)
+//To save ,After escaping click (shift + semicolon + w Key)
+ (w) --> saving the current file 
+//To Quit , same as same click (shift + semicolon + q Key) 
+ (q) --> To quit 
+
+//Best practice is
+//By clicking (shift + semicolon + wq + enter  Key)
+//This allows you to save the file and quit from the vi editor to the terminal
+
+//To views or list the files in the directory $ls command is used
+
+{
+	
+zanthoshh@whitehat:~/linuxdataengsample$ ls 
+hello.txt
+zanthoshh@whitehat:~/linuxdataengsample$ pwd
+/home/zanthoshh/linuxdataengsample
+zanthoshh@whitehat:~/linuxdataengsample$ 
+
+}
+
+//To became the super user or to became admin $sudo su this command is used 
+//superuserdo
+//This is severly used in installing any software that require the sudo permission 
+//This sudo command asks for the password in the system 
+//sudo user is also know as root user 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ sudo su
+[sudo] password for zanthoshh:     
+root@whitehat:/home/zanthoshh/linuxdataengsample# 
+
+}
+
+//To exit from the sudo user or root user
+ 
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ sudo su
+[sudo] password for zanthoshh:     
+root@whitehat:/home/zanthoshh/linuxdataengsample# exit
+exit
+
+}
+
+//And another similar text editor is nano this is easy than  the vi
+//This nano editor is very easy to use 
+//to create a new file $nano hello.txt
+//To save the nano file (ctrl+s Key ) 
+//To get out from the nano editor (ctrl + x Key )
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+hello.txt
+zanthoshh@whitehat:~/linuxdataengsample$ nano test.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+hello.txt  test.txt
+
+}
+
+//To install any application or packages we need to install the using apt manager in debain 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ sudo apt-get install {package or app}
+[sudo] password for zanthoshh:       
+Sorry, try again.
+[sudo] password for zanthoshh:      
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+0 upgraded, 0 newly installed, 0 to remove and 9 not upgraded.
+zanthoshh@whitehat:~/linuxdataengsample$ 
+
+
+}
+
+//To autofill or auto complete the file or directory
+//TAB key is used
+//If any one folder just click the TAB key it will be autofilled
+//If there are more than two folders or files you have to type the first letter or first few letters for auto complete 
+//Till the letter which differintiates file from other files 
+//These are case sensitive  the file  name or  folder should  be given correctly  ensure wheather the letter is smalll or capital
+
+//To copy any thing from terminal and paste your have to use 
+//To copy (ctrl + shift + c Key) --> used to copy any text
+//To paste (ctrl + shift + v Key) --> used to paste the text  
+
+//To default ly create a file $touch command is used 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+hello.txt  test.txt
+zanthoshh@whitehat:~/linuxdataengsample$ touch hifi.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+hello.txt  hifi.txt  test.txt
+
+}
+
+//To remove any file from any Directory  
+//$rm commmand is used to remove the files 
+
+{
+	
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+hello.txt  hifi.txt  test.txt
+zanthoshh@whitehat:~/linuxdataengsample$ rm hifi.txt 
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+hello.txt  test.txt 
+
+}
+
+//The main character and mostly professional guys uses (*) with combination of multiple commands , This is  known as the  wild card 
+//This can be used for various purposes lets see basic example ,
+//BY learning  this live example from below will make u understand about the combiation of commands and wildcards and its usage 
+
+{
+	
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+hello.txt  test.txt
+zanthoshh@whitehat:~/linuxdataengsample$ rm *
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+zanthoshh@whitehat:~/linuxdataengsample$ touch test1.txt test2.txt test3
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+test1.txt  test2.txt  test3
+zanthoshh@whitehat:~/linuxdataengsample$ rm *txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+test3
+zanthoshh@whitehat:~/linuxdataengsample$ touch test1.txt test2.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+test1.txt  test2.txt  test3
+zanthoshh@whitehat:~/linuxdataengsample$ ls *txt
+test1.txt  test2.txt
+zanthoshh@whitehat:~/linuxdataengsample$ rm *txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+test3
+zanthoshh@whitehat:~/linuxdataengsample$ rm *
+
+}
+
+//How to view the content of the file from the termianl
+//$cat command is used to view the contents of the file 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ touch test1.txt test2.txt test3.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+test1.txt  test2.txt  test3.txt
+zanthoshh@whitehat:~/linuxdataengsample$ nano test1.txt
+zanthoshh@whitehat:~/linuxdataengsample$ cat test1.txt 
+hello this is sandy i am a security researcher 
+
+zanthoshh@whitehat:~/linuxdataengsample$ cat test2.txt 
+
+}
+
+//To copy the contents of one file and paste it to another file or other location directories  
+//$cp --> This command is used to copy the contents  and paste it another file 
+
+{
+	
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+test1.txt  test2.txt  test3.txt
+zanthoshh@whitehat:~/linuxdataengsample$ cat test1.txt 
+hello this is sandy i am a security researcher 
+zanthoshh@whitehat:~/linuxdataengsample$ cat test2.txt 
+zanthoshh@whitehat:~/linuxdataengsample$ cp test1.txt test2.txt 
+zanthoshh@whitehat:~/linuxdataengsample$ cat test2.txt 
+hello this is sandy i am a security researcher 
+
+
+}
+
+//How to rename the file inf folder or rename any folder or file 
+//$mv command is used to rename the file or folder and main purpose of this command is to move the file or foleder to another location 
+//eg : this rename is tightly coupled or it will be one of its function in it
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+test1.txt  test2.txt  test3.txt
+zanthoshh@whitehat:~/linuxdataengsample$ cat test1.txt 
+hello this is sandy i am a security researcher 
+zanthoshh@whitehat:~/linuxdataengsample$ mv test1.txt rename.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+rename.txt  test2.txt  test3.txt
+zanthoshh@whitehat:~/linuxdataengsample$ cat rename.txt 
+hello this is sandy i am a security researcher 
+
+} 
+
+//$cat command other magic functions and other purposes 
+//This is used to copy the contents from one file to another file 
+
+{
+	
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+test2.txt  test3.txt
+zanthoshh@whitehat:~/linuxdataengsample$ cat test2.txt 
+hello this is sandy i am a security researcher 
+zanthoshh@whitehat:~/linuxdataengsample$ cat test3.txt 
+zanthoshh@whitehat:~/linuxdataengsample$ cat test2.txt >> test3.txt 
+zanthoshh@whitehat:~/linuxdataengsample$ cat test3.txt 
+hello this is sandy i am a security researcher 
+
+}
+
+//$echo command magic functions
+//Echo is just like print  function which will display the output of displays what we give as a input 
+//And also using append operator we can copy contents or send live contents to newfile or existing file 
+//Append Operator  ( >> )
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ echo "hello from Xytron@zanthoshh"
+hello from Xytron@zanthoshh
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+test2.txt  test3.txt
+zanthoshh@whitehat:~/linuxdataengsample$ echo "hello from Xytron@zanthoshh" >> xytron.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+test2.txt  test3.txt  xytron.txt
+zanthoshh@whitehat:~/linuxdataengsample$ cat test2.txt 
+hello this is sandy i am a security researcher 
+
+zanthoshh@whitehat:~/linuxdataengsample$ echo "hello from Xytron@zanthoshh" >> test2.txt 
+zanthoshh@whitehat:~/linuxdataengsample$ cat test2.txt 
+hello this is sandy i am a security researcher 
+
+hello from Xytron@zanthoshh
+
+}
+
+//How the this works with linux commands 
+//We already know how $history commands works just tells history of commands 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ history >> history.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+history.txt  test2.txt  test3.txt  xytron.txt
+zanthoshh@whitehat:~/linuxdataengsample$ cat history.txt 
+    1  ls
+    2  dd
+    3  cd ~
+    4  ll
+    5  gcc
+
+}
+
+//The most using command 
+//$cd
+//This is used  to change the directory  
+
+{
+	
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+folder1  folder2
+zanthoshh@whitehat:~/linuxdataengsample$ cd folder1
+zanthoshh@whitehat:~/linuxdataengsample/folder1$ pwd
+/home/zanthoshh/linuxdataengsample/folder1
+
+}
+
+//To go back one step back 
+//To get back from one folder 
+//eg : folder1/folder2/folder3/ --> if this is the path 
+//If you type $cd ..   it will go back one step
+//Result : folder1/folder2/
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+folder1  folder2
+zanthoshh@whitehat:~/linuxdataengsample$ cd folder1
+zanthoshh@whitehat:~/linuxdataengsample/folder1$ pwd
+/home/zanthoshh/linuxdataengsample/folder1
+
+}
+
+//How to come back to 2 or multiple folders mannualy 
+
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+folder1  folder2
+zanthoshh@whitehat:~/linuxdataengsample$ cd folder1
+zanthoshh@whitehat:~/linuxdataengsample/folder1$ ls
+A  B  C  D
+zanthoshh@whitehat:~/linuxdataengsample/folder1$ cd A
+zanthoshh@whitehat:~/linuxdataengsample/folder1/A$ ls
+zanthoshh@whitehat:~/linuxdataengsample/folder1/A$ pwd 
+/home/zanthoshh/linuxdataengsample/folder1/A
+zanthoshh@whitehat:~/linuxdataengsample/folder1/A$ cd ../../..
+zanthoshh@whitehat:~$ pwd
+/home/zanthoshh
+
+}
+
+//How to create multiple directory in any directory
+//$mkdir -p 1dir/2dir/3dir/ 4dir
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+folder1  folder2
+zanthoshh@whitehat:~/linuxdataengsample$ mkdir -p 1dir/2dir/3dir
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+1dir  folder1  folder2
+zanthoshh@whitehat:~/linuxdataengsample$ cd 1dir/
+zanthoshh@whitehat:~/linuxdataengsample/1dir$ ls
+2dir
+zanthoshh@whitehat:~/linuxdataengsample/1dir$ cd 2dir/
+zanthoshh@whitehat:~/linuxdataengsample/1dir/2dir$ ls
+3dir
+zanthoshh@whitehat:~/linuxdataengsample/1dir/2dir$ cd 3dir/
+zanthoshh@whitehat:~/linuxdataengsample/1dir/2dir/3dir$
+
+}
+
+//How to use $ls more effectively 
+//  -lstr
+
+{
+	
+zanthoshh@whitehat:~$ ls 
+cheatsheets-personal-zanthoshh          linuxdataengsample  postman.tar.gz
+Desktop                                 Music               Public
+Documents                               Pictures            Templates
+Downloads                               playground          Videos
+google-chrome-stable_current_amd64.deb  
+------------------------------------------------------------------------------
+zanthoshh@whitehat:~$ ls -lstr
+total 287476
+156996 -rw-rw-r-- 1 zanthoshh zanthoshh 160759938 Jul 23 18:23 postman.tar.gz
+130432 -rw-rw-r-- 1 zanthoshh zanthoshh 133561688 Jul 24 02:51 google-chrome-stable_current_amd64.deb
+     4 drwxr-xr-x 2 zanthoshh zanthoshh      4096 Jul 26 09:46 Videos
+     4 drwxr-xr-x 2 zanthoshh zanthoshh      4096 Jul 26 09:46 Templates
+     4 drwxr-xr-x 2 zanthoshh zanthoshh      4096 Jul 26 09:46 Public
+     4 drwxr-xr-x 2 zanthoshh zanthoshh      4096 Jul 26 09:46 Pictures
+     4 drwxr-xr-x 2 zanthoshh zanthoshh      4096 Jul 26 09:46 Music
+     4 drwxr-xr-x 2 zanthoshh zanthoshh      4096 Jul 26 09:46 Documents
+     4 drwxrwxr-x 3 zanthoshh zanthoshh      4096 Jul 26 22:16 Postman
+     4 drwxrwxr-x 4 zanthoshh zanthoshh      4096 Jul 26 22:20 playground
+     4 drwxr-xr-x 2 zanthoshh zanthoshh      4096 Jul 27 21:17 Desktop
+     4 drwxr-xr-x 4 zanthoshh zanthoshh      4096 Jul 27 21:33 Downloads
+     4 drwxrwxr-x 2 zanthoshh zanthoshh      4096 Jul 29 11:23 cheatsheets-personal-zanthoshh
+     4 drwxrwxr-x 5 zanthoshh zanthoshh      4096 Jul 29 16:05linuxdataengsample
+
+}
+//How to see  hidden files in the directories 
+//$ls -a ---> This command 
+
+{
+	
+zanthoshh@whitehat:~$ ls
+cheatsheets-personal-zanthoshh          linuxdataengsample  postman.tar.gz
+Desktop                                 Music               Public
+Documents                               Pictures            Templates
+Downloads                               playground          Videos
+google-chrome-stable_current_amd64.deb  Postman
+zanthoshh@whitehat:~$ ls -a
+.                                       .local
+..                                      .mozilla
+.bash_history                           Music
+.bash_logout                            Pictures
+.bashrc                                 .pki
+.cache                                  playground
+cheatsheets-personal-zanthoshh          Postman
+.config                                 postman.tar.gz
+.copilot                                .profile
+Desktop                                 Public
+Documents                               .ssh
+.dotnet                                 .sudo_as_admin_successful
+Downloads                               Templates
+.face                                   .themes
+.gnome                                  Videos
+google-chrome-stable_current_amd64.deb  .vscode
+.gtkrc-2.0                              .vscode-shared
+.gtkrc-xfce                             .Xauthority
+.icons                                  .xsession-errors
+linuxdataengsample                      .xsession-errors.old
+.linuxmint
+
+}
+
+//How to go to home directory in linux cli
+// This command ---> $cd ~/ (Tilt symbol represents the home dir)
+
+{
+	
+zanthoshh@whitehat:~$ ls
+cheatsheets-personal-zanthoshh          linuxdataengsample  postman.tar.gz
+Desktop                                 Music               Public
+Documents                               Pictures            Templates
+Downloads                               playground          Videos
+google-chrome-stable_current_amd64.deb  Postman
+zanthoshh@whitehat:~$ cd linuxdataengsample/
+zanthoshh@whitehat:~/linuxdataengsample$ cd folder1
+zanthoshh@whitehat:~/linuxdataengsample/folder1$ cd 
+A/ B/ C/ D/ 
+zanthoshh@whitehat:~/linuxdataengsample/folder1$ cd A
+zanthoshh@whitehat:~/linuxdataengsample/folder1/A$ cd ~/
+zanthoshh@whitehat:~$ 
+
+}
+
++++ Bonus ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+How to create a hidden file in directories ?
+--> You can create the hidden file in directrories
+--> by renaming  first dot in file
+
+{
+	
+zanthoshh@whitehat:~/linuxdataengsample$ ls -a
+.  ..  1dir  folder1  folder2  .hello.txt.swo  .hello.txt.swp
+zanthoshh@whitehat:~/linuxdataengsample$ nano .hidden-by-sandy.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls -a
+.  ..  1dir  folder1  folder2  .hello.txt.swo  .hello.txt.swp  .hidden-by-sandy.txt
+
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
