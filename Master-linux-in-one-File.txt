@@ -485,5 +485,13 @@ zanthoshh@whitehat:~/linuxdataengsample$ ls -a
 }
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//How  to make a custom command still there are many ways this  is one of the easiest way to combilne the commands 
+//alias is used 
 
+{
 
+zanthoshh@whitehat:~$ alias r='cd ~/linuxdataengsample'
+zanthoshh@whitehat:~$ r
+zanthoshh@whitehat:~/linuxdataengsample$
+
+}
