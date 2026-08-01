@@ -495,3 +495,659 @@ zanthoshh@whitehat:~$ r
 zanthoshh@whitehat:~/linuxdataengsample$
 
 }
+
+//Similar to windows task  manager there is a task manager in linux 
+//You can use the $top,$ps -aux,$htop --> To view the processes of the linux system 
+
+{
+
+zanthoshh@whitehat:~$ top
+
+top - 11:52:54 up 30 min,  1 user,  load average: 5.54, 4.07, 2.57
+Tasks: 282 total,   1 running, 281 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  2.2 us,  1.1 sy,  0.0 ni, 96.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   7674.4 total,   2210.5 free,   3591.4 used,   2673.8 buff/cache     
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   4083.0 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND  
+    189 root      20   0       0      0      0 I   9.1   0.0   0:08.54 kworker+ 
+   2409 zanthos+  20   0   52.5g  91988  75468 S   9.1   1.2   0:12.55 chrome   
+   2945 root       0 -20       0      0      0 I   9.1   0.0   0:06.14 kworker+ 
+   3230 zanthos+  20   0 1450.3g 577692 185204 S   9.1   7.4  17:21.82 chrome   
+   7754 zanthos+  20   0   14508   5644   3440 R   9.1   0.1   0:00.02 top      
+      1 root      20   0   22556  13520   9444 S   0.0   0.2   0:01.60 systemd  
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd 
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_wo+ 
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+ 
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+ 
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+ 
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+ 
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+ 
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+ 
+     11 root      20   0       0      0      0 I   0.0   0.0   0:00.07 kworker+ 
+     13 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+ 
+     14 root      20   0       0      0      0 S   0.0   0.0   0:00.19 ksoftir+ 
+[1]+  Stopped                 top
+zanthoshh@whitehat:~$ ps -aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1  22556 13520 ?        Ss   11:21   0:01 /sbin/init sp
+root           2  0.0  0.0      0     0 ?        S    11:21   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    11:21   0:00 [pool_workque
+root           4  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-rc
+root           5  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-sy
+root           6  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-kv
+root           7  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-sl
+root           8  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-ne
+root          10  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/0:0H
+root          11  0.0  0.0      0     0 ?        I    11:21   0:00 [kworker/0:1-
+root          13  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-mm
+root          14  0.0  0.0      0     0 ?        S    11:21   0:00 [ksoftirqd/0]
+root          15  0.2  0.0      0     0 ?        R    11:21   0:05 [rcu_preempt]
+root          16  0.0  0.0      0     0 ?        S    11:21   0:00 [rcu_exp_par_
+root          17  0.0  0.0      0     0 ?        S    11:21   0:00 [rcu_exp_gp_k
+root          18  0.0  0.0      0     0 ?        S    11:21   0:00 [migration/0]
+root          19  0.0  0.0      0     0 ?        S    11:21   0:00 [kprobe-optim
+root          20  0.0  0.0      0     0 ?        S    11:21   0:00 [idle_inject/
+root          21  0.0  0.0      0     0 ?        S    11:21   0:00 [cpuhp/0]
+root          22  0.0  0.0      0     0 ?        S    11:21   0:00 [cpuhp/1]
+root          23  0.0  0.0      0     0 ?        S    11:21   0:00 [idle_inject/
+root          24  0.0  0.0      0     0 ?        S    11:21   0:00 [migration/1]
+root          25  0.0  0.0      0     0 ?        S    11:21   0:00 [ksoftirqd/1]
+root          27  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/1:0H
+root          28  0.0  0.0      0     0 ?        S    11:21   0:00 [cpuhp/2]
+root          29  0.0  0.0      0     0 ?        S    11:21   0:00 [idle_inject/
+root          30  0.0  0.0      0     0 ?        S    11:21   0:00 [migration/2]
+root          31  0.0  0.0      0     0 ?        S    11:21   0:00 [ksoftirqd/2]
+root          33  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/2:0H
+root          34  0.0  0.0      0     0 ?        S    11:21   0:00 [cpuhp/3]
+root          35  0.0  0.0      0     0 ?        S    11:21   0:00 [idle_inject/
+root          36  0.0  0.0      0     0 ?        S    11:21   0:00 [migration/3]
+root          37  0.0  0.0      0     0 ?        S    11:21   0:00 [ksoftirqd/3]
+root          38  0.0  0.0      0     0 ?        I    11:21   0:00 [kworker/3:0-
+root          39  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/3:0H
+root          40  0.0  0.0      0     0 ?        S    11:21   0:00 [cpuhp/4]
+root          41  0.0  0.0      0     0 ?        S    11:21   0:00 [idle_inject/
+root          42  0.0  0.0      0     0 ?        S    11:21   0:00 [migration/4]
+root          43  0.0  0.0      0     0 ?        S    11:21   0:00 [ksoftirqd/4]
+root          45  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/4:0H
+root          46  0.0  0.0      0     0 ?        S    11:21   0:00 [cpuhp/5]
+root          47  0.0  0.0      0     0 ?        S    11:21   0:00 [idle_inject/
+root          48  0.0  0.0      0     0 ?        S    11:21   0:00 [migration/5]
+root          49  0.0  0.0      0     0 ?        S    11:21   0:00 [ksoftirqd/5]
+root          51  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/5:0H
+root          52  0.0  0.0      0     0 ?        S    11:21   0:00 [cpuhp/6]
+root          53  0.0  0.0      0     0 ?        S    11:21   0:00 [idle_inject/
+root          54  0.0  0.0      0     0 ?        S    11:21   0:00 [migration/6]
+root          55  0.0  0.0      0     0 ?        S    11:21   0:00 [ksoftirqd/6]
+root          57  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/6:0H
+root          58  0.0  0.0      0     0 ?        S    11:21   0:00 [cpuhp/7]
+root          59  0.0  0.0      0     0 ?        S    11:21   0:00 [idle_inject/
+root          60  0.0  0.0      0     0 ?        S    11:21   0:00 [migration/7]
+root          61  0.0  0.0      0     0 ?        S    11:21   0:00 [ksoftirqd/7]
+root          63  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/7:0H
+root          64  0.0  0.0      0     0 ?        S    11:21   0:00 [kdevtmpfs]
+root          65  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-in
+root          66  0.0  0.0      0     0 ?        I    11:21   0:00 [rcu_tasks_kt
+root          67  0.0  0.0      0     0 ?        I    11:21   0:00 [rcu_tasks_ru
+root          68  0.0  0.0      0     0 ?        S    11:21   0:00 [kauditd]
+root          69  0.0  0.0      0     0 ?        S    11:21   0:00 [khungtaskd]
+root          70  0.0  0.0      0     0 ?        S    11:21   0:00 [oom_reaper]
+root          73  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-wr
+root          74  0.0  0.0      0     0 ?        S    11:21   0:00 [kcompactd0]
+root          75  0.0  0.0      0     0 ?        SN   11:21   0:00 [ksmd]
+root          76  0.0  0.0      0     0 ?        SN   11:21   0:00 [khugepaged]
+root          77  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-kb
+root          78  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-bl
+root          79  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-ki
+root          81  0.0  0.0      0     0 ?        S    11:21   0:00 [irq/9-acpi]
+root          85  0.0  0.0      0     0 ?        I    11:21   0:00 [kworker/7:1-
+root          86  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-tp
+root          87  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-at
+root          88  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-md
+root          89  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-md
+root          90  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-md
+root          91  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-ed
+root          92  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-de
+root          93  0.0  0.0      0     0 ?        S    11:21   0:00 [watchdogd]
+root          94  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-qu
+root          95  0.0  0.0      0     0 ?        S    11:21   0:00 [kswapd0]
+root          96  0.0  0.0      0     0 ?        S    11:21   0:00 [ecryptfs-kth
+root          97  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-kt
+root          99  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-ac
+root         100  0.2  0.0      0     0 ?        I    11:21   0:04 [kworker/u32:
+root         101  0.0  0.0      0     0 ?        S    11:21   0:00 [hwrng]
+root         102  0.0  0.0      0     0 ?        I    11:21   0:00 [kworker/4:1-
+root         103  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-ml
+root         104  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-ip
+root         105  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-ks
+root         120  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-ch
+root         182  0.0  0.0      0     0 ?        I    11:21   0:00 [kworker/4:2-
+root         183  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-nv
+root         184  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-nv
+root         185  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-nv
+root         186  0.7  0.0      0     0 ?        S    11:21   0:14 [irq/140-HTIX
+root         187  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-nv
+root         189  0.4  0.0      0     0 ?        I    11:21   0:08 [kworker/u32:
+root         216  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-ra
+root         263  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/4:1H
+root         265  0.0  0.0      0     0 ?        S    11:21   0:00 [jbd2/nvme0n1
+root         266  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-ex
+root         288  0.0  0.0      0     0 ?        I    11:21   0:00 [kworker/7:2-
+root         318  0.1  0.2  67076 19084 ?        S<s  11:21   0:02 /usr/lib/syst
+root         348  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/6:1H
+root         350  0.0  0.1  30380  8276 ?        Ss   11:21   0:00 /usr/lib/syst
+root         351  0.0  0.0      0     0 ?        I    11:21   0:00 [kworker/6:3-
+root         376  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/2:1H
+root         380  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/3:1H
+root         383  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/7:1H
+root         385  0.0  0.0      0     0 ?        S    11:21   0:00 [psimon]
+root         501  0.0  0.0      0     0 ?        S    11:21   0:00 [irq/150-mei_
+root         585  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-cf
+systemd+     586  0.0  0.1  21824 13372 ?        Ss   11:21   0:01 /usr/lib/syst
+systemd+     596  0.0  0.1  91228  8096 ?        Ssl  11:21   0:00 /usr/lib/syst
+root         612  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-km
+root         623  0.0  0.1 313300  8016 ?        Ssl  11:21   0:00 /usr/libexec/
+root         625  0.0  0.0      0     0 ?        S    11:21   0:00 [irq/16-proce
+avahi        626  0.0  0.0   8616  4572 ?        Ss   11:21   0:00 avahi-daemon:
+root         628  0.0  0.0   9432  2924 ?        Ss   11:21   0:00 /usr/sbin/cro
+message+     629  0.1  0.0  11212  6820 ?        Ss   11:21   0:01 @dbus-daemon 
+root         634  0.0  0.0  82992  4468 ?        Ssl  11:21   0:00 /usr/sbin/irq
+polkitd      642  0.0  0.1 391312 12520 ?        Ssl  11:21   0:00 /usr/lib/polk
+root         650  0.0  0.1 313516  7980 ?        Ssl  11:21   0:00 /usr/libexec/
+root         661  0.0  0.0 309728  6912 ?        Ssl  11:21   0:00 /usr/libexec/
+root         662  0.0  0.1  18140  9216 ?        Ss   11:21   0:00 /usr/lib/syst
+root         663  0.0  0.1 424912 10724 ?        Ssl  11:21   0:00 /usr/sbin/the
+root         664  0.3  0.1 258568 14796 ?        Ssl  11:21   0:05 /usr/bin/touc
+root         666  0.0  0.1 469056 13816 ?        Ssl  11:21   0:00 /usr/libexec/
+avahi        693  0.0  0.0   8432  1492 ?        S    11:21   0:00 avahi-daemon:
+root         709  0.0  0.1  18044 11460 ?        Ss   11:21   0:00 /usr/sbin/wpa
+syslog       735  0.0  0.0 222516  5792 ?        Ssl  11:21   0:00 /usr/sbin/rsy
+root         759  0.0  0.1 318164 10592 ?        Ssl  11:21   0:00 /usr/libexec/
+root         772  0.0  0.1 392108 12960 ?        Ssl  11:21   0:00 /usr/sbin/Mod
+root         808  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/1:1H
+root         811  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/0:1H
+root         816  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/R-tt
+root         827  0.0  0.0      0     0 ?        S    11:21   0:00 [card1-crtc0]
+root         828  0.0  0.0      0     0 ?        S    11:21   0:00 [card1-crtc1]
+root         829  0.0  0.0      0     0 ?        S    11:21   0:00 [card1-crtc2]
+root         831  0.0  0.0  13688  6920 ?        Ss   11:21   0:00 /usr/libexec/
+root         839  1.1  0.0      0     0 ?        S    11:21   0:22 [irq/152-rtw8
+root         840  0.0  0.0      0     0 ?        I<   11:21   0:00 [kworker/5:1H
+root         891  0.0  0.2 336456 19928 ?        Ssl  11:21   0:00 /usr/sbin/Net
+root        1010  0.0  0.1  38520 12432 ?        Ss   11:21   0:00 /usr/sbin/cup
+root        1024  0.0  0.0 380048  7456 ?        Ssl  11:21   0:00 /usr/sbin/lig
+root        1037  7.7  1.4 812088 115380 tty7    Ssl+ 11:21   2:24 /usr/lib/xorg
+root        1040  0.0  0.0      0     0 ?        I    11:21   0:00 [kworker/1:3-
+root        1042  0.0  0.0   8712  2020 tty1     Ss+  11:21   0:00 /sbin/agetty 
+root        1054  0.0  0.1 236068  9176 ?        Sl   11:22   0:00 lightdm --ses
+root        1060  0.0  0.0      0     0 ?        S    11:22   0:00 [psimon]
+zanthos+    1062  0.0  0.1  20484 11832 ?        Ss   11:22   0:00 /usr/lib/syst
+zanthos+    1063  0.0  0.0  23016  3808 ?        S    11:22   0:00 (sd-pam)
+zanthos+    1073  0.0  0.2 117588 16440 ?        S<sl 11:22   0:00 /usr/bin/pipe
+zanthos+    1074  0.0  0.0  97744  6072 ?        Ssl  11:22   0:00 /usr/bin/pipe
+zanthos+    1075  0.7  0.2 407960 20120 ?        S<sl 11:22   0:13 /usr/bin/wire
+zanthos+    1076  0.5  0.3 125720 25132 ?        S<sl 11:22   0:09 /usr/bin/pipe
+zanthos+    1077  0.0  0.1 625396 15408 ?        Ssl  11:22   0:00 /usr/lib/x86_
+zanthos+    1087  0.0  0.0  10600  6340 ?        Ss   11:22   0:01 /usr/bin/dbus
+rtkit       1099  0.0  0.0  22948  3476 ?        SNsl 11:22   0:00 /usr/libexec/
+zanthos+    1194  0.2  0.1 462620 11524 ?        Ssl  11:22   0:05 /usr/bin/ibus
+root        1195  0.0  0.0      0     0 ?        S<   11:22   0:00 [krfcommd]
+zanthos+    1203  0.0  0.1 314256  8156 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1211  0.0  0.0 459716  7292 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1213  0.0  0.0 236652  7256 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1215  0.0  1.1 804012 93444 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1216  0.2  1.0 723396 83580 ?        Sl   11:22   0:05 /usr/libexec/
+zanthos+    1224  0.0  0.9 642424 75572 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1229  0.0  0.0 310432  7424 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1241  0.0  0.1 464132 10908 ?        SLsl 11:22   0:00 /usr/bin/gnom
+zanthos+    1247  0.0  0.0 303804  5872 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1249  0.0  0.1 318020 10992 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1253  0.0  0.9 789676 75348 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1255  0.0  1.0 783000 81260 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1256  0.0  0.0 305212  6652 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1265  0.0  0.9 951780 77940 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1266  0.0  0.9 716016 75560 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1267  0.0  0.1 383108  8420 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1269  0.0  0.9 791060 77104 ?        Sl   11:22   0:01 /usr/bin/csd-
+zanthos+    1273  0.0  0.9 641808 74840 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1278  0.0  0.9 717672 77324 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1280  0.0  0.0   9700  5268 ?        S    11:22   0:00 /usr/bin/dbus
+zanthos+    1281  0.0  0.3 667572 27684 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1282  0.0  0.0 309316  6252 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1283  0.0  0.0 304216  6452 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1284  0.0  0.3 376352 25216 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1288  0.0  0.9 789940 75820 ?        Sl   11:22   0:00 /usr/bin/csd-
+zanthos+    1299  0.0  0.0 230248  6180 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1336  0.0  0.1 236172  8400 ?        Sl   11:22   0:00 /usr/libexec/
+colord      1390  0.0  0.1 320200 14880 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1392  0.0  0.1 389356 10468 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1404  0.0  0.0 309800  6724 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1410  0.0  0.5 541912 40196 ?        Sl   11:22   0:00 cinnamon-laun
+zanthos+    1411  0.0  0.0 309780  6600 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1416  0.0  0.3 546424 24200 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1427  0.0  0.1 389128  9516 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1437  0.0  0.1 389388  8300 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1451  0.0  0.0 236776  7648 ?        Sl   11:22   0:01 /usr/libexec/
+zanthos+    1455  0.0  0.0 310768  7160 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1482 15.0  2.9 4604396 234932 ?      Sl   11:22   4:39 cinnamon --re
+zanthos+    1494  0.0  0.1 416248 15336 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1525  0.0  0.3 450064 28484 ?        Sl   11:22   0:00 /usr/lib/x86_
+zanthos+    1549  0.0  0.7 826396 59140 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1555  0.0  0.7 704976 60216 ?        Sl   11:22   0:00 /usr/bin/nemo
+zanthos+    1556  0.0  0.0 310268  6616 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1563  0.0  0.4 392380 37740 ?        Sl   11:22   0:00 cinnamon-kill
+zanthos+    1565  0.0  0.6 626308 54868 ?        Sl   11:22   0:01 /usr/bin/pyth
+zanthos+    1600  0.0  0.5 599444 43104 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1620  0.0  0.3 1497112 24800 ?       Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1632  0.0  0.3 899344 30356 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1658  0.0  0.1  49080  8312 ?        Ss   11:22   0:00 /usr/libexec/
+zanthos+    1675  0.1  0.5 394084 41456 ?        Sl   11:22   0:03 /usr/bin/pyth
+cups-br+    1684  0.0  0.2 268500 20100 ?        Ssl  11:22   0:00 /usr/sbin/cup
+root        1685  0.0  0.0      0     0 ?        I    11:22   0:01 [kworker/3:3-
+kernoops    1693  0.0  0.0  12752  2516 ?        Ss   11:22   0:00 /usr/sbin/ker
+kernoops    1700  0.0  0.0  12752  2464 ?        Ss   11:22   0:00 /usr/sbin/ker
+zanthos+    1757  0.0  0.1 609448  8976 ?        Sl   11:22   0:00 /usr/libexec/
+zanthos+    1779  4.6  5.5 55612208 435456 ?     Sl   11:22   1:26 /opt/google/c
+zanthos+    1784  0.0  0.0   8436  1936 ?        S    11:22   0:00 cat
+zanthos+    1785  0.0  0.0   8436  1936 ?        S    11:22   0:00 cat
+zanthos+    1787  0.0  0.0 54550016 3792 ?       Sl   11:22   0:00 /opt/google/c
+zanthos+    1789  0.0  0.0 54540780 3428 ?       Sl   11:22   0:00 /opt/google/c
+zanthos+    1795  0.0  0.8 55234208 67260 ?      S    11:22   0:00 /opt/google/c
+zanthos+    1796  0.0  0.8 55234200 67344 ?      S    11:22   0:00 /opt/google/c
+zanthos+    1798  0.0  0.2 55234220 19384 ?      S    11:22   0:00 /opt/google/c
+zanthos+    1823 26.6  3.0 55741656 241452 ?     Sl   11:22   8:12 /opt/google/c
+zanthos+    1825  1.8  1.7 54991772 139480 ?     Sl   11:22   0:34 /opt/google/c
+zanthos+    1836  0.0  0.7 55292896 60716 ?      Sl   11:22   0:01 /opt/google/c
+zanthos+    1900  0.0  0.2 564256 19444 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1905  0.0  0.0 536772  7768 ?        Ssl  11:22   0:00 /usr/libexec/
+root        1911  0.0  0.0   2712  2044 ?        Ss   11:22   0:00 fusermount3 -
+zanthos+    1915  0.0  0.3 450512 25856 ?        Ssl  11:22   0:00 /usr/libexec/
+zanthos+    1924  0.0  0.5 687944 45948 ?        Ssl  11:22   0:01 /usr/libexec/
+zanthos+    1940  0.1  2.0 1518650820 160788 ?   Sl   11:22   0:02 /opt/google/c
+zanthos+    1978  0.0  1.6 1520612668 129616 ?   Sl   11:22   0:01 /opt/google/c
+zanthos+    2073  0.0  1.2 1045700 96304 ?       Sl   11:22   0:00 mintUpdate
+zanthos+    2133  0.0  0.4  63428 36736 ?        S    11:22   0:00 /usr/bin/pyth
+zanthos+    2182  0.8  0.7 490812 57744 ?        Sl   11:22   0:16 mintreport-tr
+root        2396  0.0  0.6 403792 48000 ?        Ssl  11:24   0:01 /usr/libexec/
+zanthos+    2409  0.7  1.1 55034808 91916 ?      Sl   11:25   0:12 /opt/google/c
+root        2901  0.1  0.0      0     0 ?        I    11:27   0:02 [kworker/0:3-
+root        2945  0.4  0.0      0     0 ?        I<   11:28   0:06 [kworker/u33:
+root        2986  0.0  0.0      0     0 ?        I    11:28   0:00 [kworker/5:0]
+zanthos+    3183  0.5  2.2 1518690512 177432 ?   Sl   11:29   0:07 /opt/google/c
+zanthos+    3230 74.1  6.0 1520704068 472148 ?   Sl   11:29  17:23 /opt/google/c
+zanthos+    3315  0.0  0.0 50356028 4160 ?       Sl   11:29   0:00 /usr/share/co
+zanthos+    3434  0.0  0.0 309364  6168 ?        Sl   11:29   0:00 dconf watch /
+zanthos+    3658  0.0  0.1 462360  9212 ?        Sl   11:30   0:00 /usr/libexec/
+zanthos+    3670  0.0  0.1 390556  9336 ?        Sl   11:30   0:00 /usr/libexec/
+zanthos+    3947  5.1  3.7 1520656016 294144 ?   Sl   11:30   1:09 /opt/google/c
+root        4017  0.0  0.0      0     0 ?        I    11:30   0:00 [kworker/2:0-
+root        5660  0.0  0.0      0     0 ?        I    11:36   0:00 [kworker/6:0]
+root        5904  0.0  0.0      0     0 ?        I    11:38   0:00 [kworker/2:2-
+zanthos+    6131  0.0  0.1 320064 10044 ?        Sl   11:39   0:00 /usr/libexec/
+root        6355  0.0  0.0      0     0 ?        I    11:40   0:00 [kworker/1:1]
+root        6356  0.1  0.0      0     0 ?        I    11:40   0:01 [kworker/5:2-
+root        6370  0.9  0.0      0     0 ?        I    11:40   0:07 [kworker/u32:
+root        6377  0.4  0.0      0     0 ?        I    11:40   0:03 [kworker/u32:
+zanthos+    6402  1.2  2.7 1520588008 214692 ?   SLl  11:40   0:09 /usr/share/co
+zanthos+    6406  0.0  0.7 50881628 55108 ?      S    11:40   0:00 /usr/share/co
+zanthos+    6407  0.0  0.7 50881616 55108 ?      S    11:40   0:00 /usr/share/co
+zanthos+    6409  0.0  0.1 50881644 13816 ?      S    11:40   0:00 /usr/share/co
+zanthos+    6424  0.0  0.0 50356028 4164 ?       Sl   11:40   0:00 /usr/share/co
+zanthos+    6439  1.0  2.1 51315312 167868 ?     Sl   11:40   0:08 /usr/share/co
+zanthos+    6443  0.1  1.1 50702700 86532 ?      Sl   11:40   0:01 /usr/share/co
+zanthos+    6484  5.1  4.0 1518665832 316032 ?   Sl   11:40   0:39 /usr/share/co
+zanthos+    6517  0.6  1.6 1520361708 131712 ?   Sl   11:40   0:04 /usr/share/co
+zanthos+    6532  1.7  4.9 1520674404 387204 ?   Sl   11:40   0:13 /usr/share/co
+zanthos+    6540  0.8  1.7 1520352704 136900 ?   Sl   11:40   0:06 /usr/share/co
+zanthos+    6545  0.2  1.5 1520361460 124316 ?   Sl   11:40   0:01 /usr/share/co
+zanthos+    6610  0.0  0.0 309364  6204 ?        Sl   11:40   0:00 dconf watch /
+zanthos+    6638  0.0  0.0  13292  7676 pts/0    Ss+  11:40   0:00 /usr/bin/bash
+zanthos+    6663  0.3  1.9 1520362944 153648 ?   Sl   11:40   0:02 /usr/share/co
+root        6688  0.7  0.0      0     0 ?        I<   11:40   0:05 [kworker/u33:
+zanthos+    6703  0.0  1.2 1518270096 96920 ?    Sl   11:40   0:00 /usr/share/co
+zanthos+    6848  0.2  3.0 1518452204 238724 ?   Sl   11:40   0:01 /usr/share/co
+zanthos+    7031  0.0  1.0 1518594076 79680 ?    Sl   11:40   0:00 /opt/google/c
+root        7610  0.7  0.0      0     0 ?        I<   11:47   0:02 [kworker/u33:
+root        7612  0.1  0.0      0     0 ?        I    11:49   0:00 [kworker/u32:
+zanthos+    7734  5.2  0.5 689488 42644 ?        Ssl  11:52   0:00 /usr/libexec/
+zanthos+    7746  0.2  0.0  11268  5676 pts/1    Ss   11:52   0:00 bash
+zanthos+    7754  0.2  0.0  14508  5912 pts/1    T    11:52   0:00 top
+root        7757  0.2  0.1 312472  9140 ?        Ssl  11:52   0:00 /usr/libexec/
+zanthos+    7762  200  0.0  15056  5484 pts/1    R+   11:53   0:00 ps -aux
+zanthoshh@whitehat:~$ htop
+
+[2]+  Stopped                 htop
+
+}
+//a- show process for all users
+//u-Show the  user who ownns the  process 
+//x-Show  the processes  not attached to the terminal 
+
+// Grep the particular processes using $grep command
+// grep is used along with combination of commands to use in all cases 
+
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ps -aux  | grep simple.py 
+zanthos+    8045  1.0  1.3 409472 106168 pts/1   Sl   12:00   0:04 /opt/sublime_text/sublime_text --detached --fwdargv0 /usr/bin/subl simple.py
+zanthos+    <pid> 0.0  0.1  20336  9472 pts/1    T    12:03   0:00 python3 simple.py
+zanthos+    8177  0.0  0.1  20472  9508 pts/1    T    12:04   0:00 python3 simple.py logs.txt
+zanthos+    8195  0.0  0.0   9284  2348 pts/1    S+   12:06   0:00 grep --color=auto simple.py
+zanthoshh@whitehat:~/linuxdataengsample$ 
+
+}
+//The pipe  symbol | is used to run different  commands along side for ex : in here the command 1 output is  given as input  to  second  command 
+
+//We usually remove the unwanted  startup apps and unwanted ram consuuming applications in the taskbar 
+//Here either in top or htop or ps aux 
+//To remove the process Kill -9 <pid> is used 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ps -aux | grep simple.py 
+zanthos+    8045  0.5  1.3 409472 106168 pts/1   Sl   12:00   0:04 /opt/sublime_text/sublime_text --detached --fwdargv0 /usr/bin/subl simple.py
+zanthos+    8158  0.0  0.1  20336  9472 pts/1    T    12:03   0:00 python3 simple.py
+zanthos+    8177  0.0  0.1  20472  9508 pts/1    T    12:04   0:00 python3 simple.py logs.txt
+zanthos+    8519  0.0  0.0   9284  2344 pts/1    S+   12:12   0:00 grep --color=auto simple.py
+zanthoshh@whitehat:~/linuxdataengsample$ sudo kill -9 8045
+[sudo] password for zanthoshh:     
+zanthoshh@whitehat:~/linuxdataengsample$ ps -aux | grep simple.py 
+zanthos+    8158  0.0  0.1  20336  9472 pts/1    T    12:03   0:00 python3 simple.py
+zanthos+    8177  0.0  0.1  20472  9508 pts/1    T    12:04   0:00 python3 simple.py logs.txt
+zanthos+    8527  0.0  0.0   9284  2344 pts/1    S+   12:12   0:00 grep --color=auto simple.py
+
+}
+
+//You need to  be in  super user to kill some of the process 
+// To continusly see the current logs  in the file or  see the  error message or access logs
+//$tail -f command is used 
+
+//To View about the disk info
+//$df -h ---> is used 
+//Here -h means in human readlabe form 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           768M  1.9M  766M   1% /run
+efivarfs        192K  122K   66K  65% /sys/firmware/efi/efivars
+/dev/nvme0n1p2  234G   24G  199G  11% /
+tmpfs           3.8G  186M  3.6G   5% /dev/shm
+tmpfs           5.0M  8.0K  5.0M   1% /run/lock
+/dev/nvme0n1p1  511M   75M  437M  15% /boot/efi
+tmpfs           768M  200K  768M   1% /run/user/1000
+
+}
+
+//To particulary see how much does the  file used disk (disk usage )
+//$du -sh <file or folder name > ---> This command is used to see the disk usage of particular  file  or  folder  
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+hardlink  nohup.out  oCimMfcoL7oZsvtwn  simple.py
+zanthoshh@whitehat:~/linuxdataengsample$ du -sh simple.py 
+4.0K	simple.py
+
+}
+//Here du means disk usage and -sh means  summary in human readlabe form 
+
+//How  to zip the files in linux via  terminal 
+//$zip  <named to zip > <file name >
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ zip  -r  hardlinkr.zip hardlink
+  adding: hardlink/ (stored 0%)
+  adding: hardlink/test1.txt (stored 0%)
+  adding: hardlink/test2.txt (stored 0%)
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+hardlink  hardlinkr.zip  hardlink.zip  nohup.out  oCimMfcoL7oZsvtwn  simple.py
+
+}
+//If the zip tool is  not installed in your  linux you can install via 
+//$sudo apt install zip 
+
+//Simple example of  tail command
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls  -lstr  | tail -f
+total 44
+ 4 drwxrwxr-x 2 zanthoshh zanthoshh  4096 Jul 31 13:40 hardlink
+ 4 -rw-rw-r-- 1 zanthoshh zanthoshh    92 Aug  1 12:03 simple.py
+ 0 -rw------- 1 zanthoshh zanthoshh     0 Aug  1 12:04 nohup.out
+32 -rw-rw-r-- 1 zanthoshh zanthoshh 30288 Aug  1 12:18 oCimMfcoL7oZsvtwn
+ 4 -rw-rw-r-- 1 zanthoshh zanthoshh   168 Aug  1 13:13 hardlink.zip
+
+}
+
+//Here the tail is piped to ls command the ls output  will be given as input to thwe  tail  -f  this gives recently used or modified files and folders
+//How to  unzip the zipped folder  
+//we can unzip the  folder using $unzip command 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ unzip hardlinkr.zip 
+Archive:  hardlinkr.zip
+replace hardlink/test1.txt? [y]es, [n]o, [A]ll, [N]one, [r]ename: A
+ extracting: hardlink/test1.txt      
+ extracting: hardlink/test2.txt     
+
+}
+//To remove  the folder forcefully 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+hardlink  hardlinkr.zip  hardlink.zip  nohup.out  oCimMfcoL7oZsvtwn  simple.py
+zanthoshh@whitehat:~/linuxdataengsample$ rm -rf hardlink hardlink.zip 
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+hardlinkr.zip  nohup.out  oCimMfcoL7oZsvtwn  simple.py
+zanthoshh@whitehat:~/linuxdataengsample$ 
+
+}
+
+//So far u came 
+//Lets know little advanced stuffs
+//How to zip and unzip using tar 
+//To zip $tar -czvf(compress , z for  tar and tar.gz will forcefully  compress, v for verbose that  displays the process , f for following list  )
+//To unzip $tar -xzvf (Extaract and remainig same )
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+folder1  folder2
+zanthoshh@whitehat:~/linuxdataengsample$ tar -czvf folder1.tar folder1/
+folder1/
+folder1/2.txt
+folder1/1.txt
+folder1/3.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+folder1  folder1.tar  folder2
+
+}
+
+//To  unzip 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+folder1  folder1.tar  folder2
+zanthoshh@whitehat:~/linuxdataengsample$ rm -rf folder1
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+folder1.tar  folder2
+zanthoshh@whitehat:~/linuxdataengsample$ tar -xzvf folder1.tar
+folder1/
+folder1/2.txt
+folder1/1.txt
+folder1/3.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+folder1  folder1.tar  folder2
+
+}
+//To view  the memory consuption and memmory
+//If system get slowed type $free -m ----> tells in Mb 
+//if need  in gb -----> $free -g 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ free -m 
+               total        used        free      shared  buff/cache   available
+Mem:            7674        3760        1950         523        2800        3913
+Swap:           2047           0        2047
+zanthoshh@whitehat:~/linuxdataengsample$ free -g
+               total        used        free      shared  buff/cache   available
+Mem:               7           3           2           0           2           3
+Swap:              1           0           1
+
+}
+//Here if some thing  memory consminf like  buff / cache the system might get slow 
+//Type $ sudo sh  -c "sync; echo 3> /proc/sys/vm/drop_caches"
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ sudo sh  -c "sync; echo 3> /proc/sys/vm/drop_caches"
+[sudo] password for zanthoshh:     
+
+
+}
+
+//Lets  learn about wc commands 
+//wc is used to  diaplay  words , length , characters in the file 
+//Normally wc is tells everything 
+//l-  tells  length of the file 
+//c - no of character in the file 
+//w - no of  words in the  file 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ echo "lets learn about wc command  " >> wordcount.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+folder1  folder2  wordcount.txt
+zanthoshh@whitehat:~/linuxdataengsample$ wc wordcount.txt 
+ 1  5 30 wordcount.txt
+zanthoshh@whitehat:~/linuxdataengsample$ wc -w wordcount.txt 
+5 wordcount.txt
+zanthoshh@whitehat:~/linuxdataengsample$ wc -l wordcount.txt 
+1 wordcount.txt
+zanthoshh@whitehat:~/linuxdataengsample$ wc -c wordcount.txt 
+30 wordcount.txt
+
+}
+
+//Lets learn  about sort command 
+//used to sort the file like  a-z or  z-a 1- or in reverse
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ cat forsorting.txt 
+BMW
+Audi
+benz
+rolls royalce 
+maruti
+hyundai
+dodge tannon
+zanthoshh@whitehat:~/linuxdataengsample$ sort forsorting.txt 
+Audi
+benz
+BMW
+dodge tannon
+hyundai
+maruti
+rolls royalce 
+
+}
+
+//To sort in reverse  user -r flag
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ sort -r forsorting.txt 
+rolls royalce 
+maruti
+hyundai
+dodge tannon
+BMW
+benz
+Audi
+
+}
+
+//Same applies to numbers but in nnumber  using -n flag is  must 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ sort -n number.txt 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+zanthoshh@whitehat:~/linuxdataengsample$ sort -n -r number.txt 
+15
+14
+13
+12
+11
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+}
+
+
+//Usage of  Head command  
+//Previosly we used tail to  print the  error  logs which pinnts last 10 lines 
+//Here the Head command is used to print  first 10 lines of the file 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ cat number.txt 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+zanthoshh@whitehat:~/linuxdataengsample$ head number.txt 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+}
