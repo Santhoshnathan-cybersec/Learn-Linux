@@ -1151,3 +1151,239 @@ zanthoshh@whitehat:~/linuxdataengsample$ head number.txt
 10
 
 }
+
+//Here You  can give  parameters also 
+//To specify the lines 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+folder1  folder2  forsorting.txt  number.txt  wordcount.txt
+zanthoshh@whitehat:~/linuxdataengsample$ head -n 5 number.txt 
+1
+2
+3
+4
+5
+
+}
+
+//Most used command by professionals annd begginers 
+//$grep with combination of  commands 
+
+//Lets know how grep finds the text in the file 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ nano log1.txt
+zanthoshh@whitehat:~/linuxdataengsample$ nano log2.txt
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+log1.txt  log2.txt
+zanthoshh@whitehat:~/linuxdataengsample$ grep XYTRON log2.txt 
+XYTRON 
+
+}
+
+//This is case sensitive so if you want to search for case insensitive 
+//case insensitive --> $grep -i 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ grep xytron log2.txt 
+zanthoshh@whitehat:~/linuxdataengsample$ grep -i xytron log2.txt 
+XYTRON 
+
+}
+
+//To remove the specific word  from searching and display remaining 
+//$grep -v 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ grep -v XYTRON log2.txt 
+This file is also to learn about the grep in detail 
+
+zanthoshh@whitehat:~/linuxdataengsample$ cat log2.txt 
+This file is also to learn about the grep in detail 
+
+XYTRON 
+}
+
+//To search a word among Filesystem
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ cat log1.txt 
+hello let explore the grepcommands in detail
+this can be used for various purposes 
+Can be combined with commands using pipe |
+
+zanthoshh@whitehat:~/linuxdataengsample$ grep various *.txt
+log1.txt:this can be used for various purposes 
+
+}
+//Here above example the * is the wild card that denotes everything  in this folder and that .txt represents check the .txt Files
+
+//Lets know how to recursively search with grep 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+imp  list.txt
+zanthoshh@whitehat:~/linuxdataengsample$ cat list.txt 
+xytron
+
+zanthoshh@whitehat:~/linuxdataengsample$ cd imp/
+zanthoshh@whitehat:~/linuxdataengsample/imp$ ls list.txt 
+list.txt
+zanthoshh@whitehat:~/linuxdataengsample/imp$ cat list.txt 
+xytron
+
+zanthoshh@whitehat:~/linuxdataengsample/imp$ cd ~
+zanthoshh@whitehat:~$ grep "xytron" ~/linuxdataengsample/
+grep: /home/zanthoshh/linuxdataengsample/: Is a directory
+zanthoshh@whitehat:~$ grep -r "xytron" ~/linuxdataengsample/
+/home/zanthoshh/linuxdataengsample/list.txt:xytron
+/home/zanthoshh/linuxdataengsample/imp/list.txt:xytron
+
+//IN above  example you might get error if you not placed -r flag in the command 
+// -r flag represents the recursively
+
+//This can be used with Regx expressions within double quotes
+
+//Now Lets learn about how to find the files and searn the files 
+//$find . -name <filename> ----> This $find command is used to find the files 
+
+{
+
+zanthoshh@whitehat:~$ cd linuxdataengsample/
+zanthoshh@whitehat:~/linuxdataengsample$ ls
+imp  list.txt
+zanthoshh@whitehat:~/linuxdataengsample$ cd ~
+zanthoshh@whitehat:~$ find . -name list.txt
+./linuxdataengsample/list.txt
+./linuxdataengsample/imp/list.txt
+
+}
+
+//Here you can specify the size 
+//$find . -type f -size +10M
+
+{
+
+zanthoshh@whitehat:~$ find . -type f -size +20M
+./.local/bin/copilot
+./.local/share/Trash/files/Hatter.zip
+./.config/google-chrome/Default/Service Worker/CacheStorage/8cbb992fe0cd9ef960e69a214646bd270516a23e/2b1e4053-7e77-4bbb-aa9e-e8b172bbf655/90a012847f70fea3_1
+./.config/google-chrome/OptGuideOnDeviceModel/2025.8.8.1141/weights.bin
+./.config/google-chrome/optimization_guide_model_store/67/A3BFD4A403A877EC/830AF905E35E4920/model.tflite
+./.config/google-chrome/optimization_guide_model_store/43/A3BFD4A403A877EC/6F6DF33DB37C6411/model.tflite
+./.config/google-chrome/WasmTtsEngine/20260723.1/bindings_main.wasm
+./.config/google-chrome/component_crx_cache/c8c2fd0acdb7eecaf4f66d5164204c4e8e5ebbabb6398e0ee6ec6d8af71ea672
+./.config/Code/CachedExtensionVSIXs/vscjava.migrate-java-to-azure-1.22.0-linux-x64
+./google-chrome-stable_current_amd64.deb
+./.vscode/extensions/vscjava.migrate-java-to-azure-1.22.0-linux-x64/node_modules/@microsoft/github-copilot-app-modernization-mcp-server/dist/entrypoints/index.js
+./.vscode/extensions/vscjava.migrate-java-to-azure-1.22.0-linux-x64/node_modules/@microsoft/jsts-upgrade-assistant-linux-x64/bin/Updates
+./.cache/google-chrome/Default/Cache/Cache_Data/0c06116f1ded2af4_0
+./.cache/google-chrome/Profile 1/Cache/Cache_Data/64c4d6faca4b1999_s
+./.cache/google-chrome/Profile 1/Cache/Cache_Data/20a4dd7d8a1929a3_s
+./.cache/google-chrome/Profile 1/Code Cache/js/5631fa6c3a469efb_0
+./.cache/mozilla/firefox/WyeToeg5.Profile 1/cache2/entries/4266224D2ABF1BAC98D97E8F76F7CFF6D190B72B
+./.cache/mozilla/firefox/2d3qtow7.default-release/cache2/entries/4266224D2ABF1BAC98D97E8F76F7CFF6D190B72B
+./custom/bin/copilot
+./Downloads/code_1.130.0-1784734578_amd64.deb
+./.net/Updates/VIGXxDDXIemn/.playwright/node/linux-x64/node
+./.mozilla/firefox/WyeToeg5.Profile 1/gmp-widevinecdm/4.10.3050.0/libwidevinecdm.so
+./postman.tar.gz
+
+}
+//Here with the find command we can do lot of stuffs
+
+//Lets check what are the files we modified in last 24 hours
+//Command is $find . -mtime 1
+//I used tail -f because i modified morethan 100 files within a day so it shows more than 100 files 
+//just to show last 10 modification i used tail -f 
+
+{
+
+zanthoshh@whitehat:~$ find . -mtime 1 | tail -f
+./LESSONS/Learn-Linux/Learn-Linux/.git/hooks/commit-msg.sample
+./LESSONS/Learn-Linux/Learn-Linux/.git/description
+./LESSONS/Learn-Linux/Learn-Linux/.git/logs
+./LESSONS/Learn-Linux/Learn-Linux/.git/logs/refs
+./LESSONS/Learn-Linux/Learn-Linux/.git/logs/refs/remotes
+./LESSONS/Learn-Linux/Learn-Linux/.git/logs/refs/remotes/origin
+./LESSONS/Learn-Linux/Learn-Linux/.git/logs/refs/remotes/origin/HEAD
+./LESSONS/Learn-Linux/Learn-Linux/.git/logs/refs/heads
+./LESSONS/Learn-Linux/Learn-Linux/.git/HEAD
+./LESSONS/Learn-Linux/linux.txt
+
+}
+
+//Lets  know how to find the empty file using the find command 
+//For this u can create a empty file and run this command 
+
+{
+
+zanthoshh@whitehat:~$ find . -empty 
+
+}
+
+//This displays the empty files in the system 
+
+//Lets learn about a  intresting tool called awk 
+//By seeing the output you will know what it is performing 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ nano data.txt
+zanthoshh@whitehat:~/linuxdataengsample$ awk '{print}' data.txt 
+Sandy      20   Cybersecurity|Developer|Tech Wizard
+Kiruthck   20   SoftwareDeveloper
+Suriya     20   Editor|UI&UX 
+zanthoshh@whitehat:~/linuxdataengsample$ awk '{print $1 , $3}' data.txt 
+Sandy Cybersecurity|Developer|Tech
+Kiruthck SoftwareDeveloper
+Suriya Editor|UI&UX
+
+}
+
+//Lets  know what other things can be done using the awk 
+//This is similar to Excel fourmula so if u in this domain try to explore this 
+
+//Lets learn about changing permission using $chmod
+//rwx --> read,write,execute --->These are the permissions 
+//7---->r&w&x 5--->r&e  6 -->r&w
+//0 ---> No permission 
+//Lets see and example now 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ ls -lstr
+total 0
+0 -rw-rw-r-- 1 zanthoshh zanthoshh 0 Aug  2 14:25 changingpermissioons.txt
+zanthoshh@whitehat:~/linuxdataengsample$ chmod 777 changingpermissioons.txt 
+zanthoshh@whitehat:~/linuxdataengsample$ ls -lstr
+total 0
+0 -rwxrwxrwx 1 zanthoshh zanthoshh 0 Aug  2 14:25 changingpermissioons.txt
+
+}
+
+//To change the permissions for the directory 
+//$chmod -R 777 directoriename 
+
+{
+
+zanthoshh@whitehat:~/linuxdataengsample$ mkdir dummybava
+zanthoshh@whitehat:~/linuxdataengsample$ ls -lstr
+total 4
+0 -rwxrwxrwx 1 zanthoshh zanthoshh    0 Aug  2 14:25 changingpermissioons.txt
+4 drwxrwxr-x 2 zanthoshh zanthoshh 4096 Aug  2 14:27 dummybava
+zanthoshh@whitehat:~/linuxdataengsample$ chmod -R 777 dummybava/
+zanthoshh@whitehat:~/linuxdataengsample$ ls -lstr
+total 4
+0 -rwxrwxrwx 1 zanthoshh zanthoshh    0 Aug  2 14:25 changingpermissioons.txt
+4 drwxrwxrwx 2 zanthoshh zanthoshh 4096 Aug  2 14:27 dummybava
+
+}
+
